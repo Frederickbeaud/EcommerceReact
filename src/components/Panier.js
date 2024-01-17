@@ -2,10 +2,18 @@ import React, { useState } from 'react';
 
 const Panier = ({panier}) => {
    let isvid = panier.length>0 ?true:false
+   
    const [total,setTotal] = useState([])
-   let obj 
+   panier.forEach(element => {
+    let obj  = {des:element.désignation, pu:element.prix,qte:1,pt:element.prix}
+    
+
+   });
+   
+   
+   
    const addtotal = (p,qte)=>{
-    obj = {des:p.désignation, pu:p.prix,qte:qte,pt:p.prix*qte}
+    let obj = {des:p.désignation, pu:p.prix,qte:qte,pt:(p.prix*qte)}
     setTotal([...total,obj])
    }
     return (
@@ -24,7 +32,7 @@ const Panier = ({panier}) => {
             
             <li key={index}>{p.des} {p.pu} * {p.qte} = {p.pt} </li>
          )}
-            <p>Total = {total.reduce((e,b)=>{return e+b}) } TND</p>
+            
             </div>
            </div>):
         (<div className='centervd'>
@@ -49,7 +57,7 @@ const PanierCard = ({p,addtotal}) => {
     }
     const plus = (p)=>{
         
-        setQte(p+1)
+        setQte(qte+1)
         addtotal(p,qte)
     }
     return (
@@ -62,9 +70,9 @@ const PanierCard = ({p,addtotal}) => {
                 </div>
                 <div className='button'>
                     <div>
-                    <button onClick={()=>minus(qte)}>-</button>
+                    <button onClick={()=>minus(p)}>-</button>
                     <p>{qte}</p>
-                    <button onClick={()=>plus(qte)}>+</button>
+                    <button onClick={()=>plus(p)}>+</button>
                     </div>
                     
                     

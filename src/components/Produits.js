@@ -7,7 +7,10 @@ const Produits = ({addToCard}) => {
   useEffect(() => {
     fetch("https://localhost:7235/api/Produits")
       .then((response) => response.json())
-      .then((data) => setData(data))
+      .then((data) => {setData(data);
+      
+
+      })
       .catch((error) => console.error("Erreur :", error));
   }, []);
   const motChange = (e) => {
@@ -34,7 +37,7 @@ const Produits = ({addToCard}) => {
           </div>
           
         </div>
-        <div className="containerProduit">
+        <div className="containerProduit" >
           
             {data.map((p,index)=>
                 <CardProduit produit={p} key={index} addToCard={addToCard}/>
