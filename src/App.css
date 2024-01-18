@@ -379,3 +379,26 @@ aside nav ul{
   text-align: center;
   padding: 0 auto;
 }
+.produitM form{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  gap: 2px;
+  height: 300px;
+  width: 400px;
+  border: 2px solid white;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+}
+.produitM form input{
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 3px;
+  width: 250px;
+}
+.produitM form input:focus{
+  font-size: 1.2rem;
+  padding-left: 5px;
+}
