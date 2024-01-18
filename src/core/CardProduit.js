@@ -14,8 +14,11 @@ const CardProduit = ({produit,key,addToCard}) => {
           <div className="product-details">
             <h2 className="product-title">{produit.désignation}</h2>
             <h4 className="product-price">${produit.prix}</h4>
+            <div className="btnc">
             <button className="add-to-cart-btn" onClick={add}>Add to Cart</button>
             <button className="view-btn">View</button>
+            </div>
+           
           </div>
         </div>
       

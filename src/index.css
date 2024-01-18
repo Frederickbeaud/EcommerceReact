@@ -16,8 +16,8 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 a{
-  text-decoration: none;
-  color: white;
+  text-decoration: none!important;
+  color: white!important;
 }
 li{
   list-style: none;
@@ -30,4 +30,7 @@ button{
   outline: none;
   border: none;
   cursor: pointer;
+}
+div{
+  padding: auto;
 }

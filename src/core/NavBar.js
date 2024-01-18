@@ -8,7 +8,7 @@ const NavBar = ({panier,connected}) => {
             <header>
                 <h1>LOGO<span>.</span></h1>  
                 {
-                    connected ?
+                    !connected ?
                 <nav>
                     <ul>
                         <li><CustomLink to="/" >Home</CustomLink></li>
@@ -21,7 +21,7 @@ const NavBar = ({panier,connected}) => {
                 }
                 
                 <div>
-                   {connected ? (<div><button><Link to="/panier"><i className='bx bx-cart'></i></Link> {isNew ? <span></span>:<></>} </button>
+                   {!connected ? (<div><button><Link to="/panier"><i className='bx bx-cart'></i></Link> {isNew ? <span></span>:<></>} </button>
                     <button>Login</button></div>):<></>
                    }
                 </div>
